@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webbshop-backend project</title>
+  </head>
+  <body>
+    <h1>Webbshop</h1>
+
+    <!-- Register Form -->
+    <form onsubmit="registerUser(); return false">
+        <h2>Register</h2>
+        <input id="register-username" placeholder="Username" required type="text" />
+        <input id="register-password" placeholder="Password" required type="password" />
+        <button type="submit">Register</button>
+    </form>
+    <!-- <form onsubmit="registerUser(); return false">
+      <h2>Register</h2>
+      <input id="register-username" placeholder="Username" required type="text" />
+      <input
+        id="register-password"
+        placeholder="Password"
+        required type="password"
+      />
+      <button type="submit">Register</button>
+    </form> -->
+
+    <!-- Log in Form -->
+    <form onsubmit="loginUser(); return false">
+      <h2>Login</h2>
+      <input required id="login-username" placeholder="Username" type="text" />
+      <input
+        required
+        id="login-password"
+        placeholder="Password"
+        type="password"
+      />
+      <button type="submit">Login</button>
+    </form>
+    <!-- ------ -->
+    <h2>Check Authentication</h2>
+    <button onclick="checkLoggedInStatus()">Check if you are logged in :) </button>
+
+    <!-- Logout button -->
+    <h2>Go to logout</h2>
+    <button onclick="logout()">Logout</button>
+    <script src="./app.js"></script>
+  </body>
+</html>
