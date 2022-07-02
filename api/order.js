@@ -4,7 +4,7 @@ const passport = require("passport");
 const passportConfig = require("../passport");
 const Order = require("../models/Order");
 const User = require("../models/User");
-const orderConfirmed  = require("../services/emailService");
+const { orderConfirmed } = require("../services/emailService");
 
 // add new order
 orderRouter.post("/neworder", (req, res) => {

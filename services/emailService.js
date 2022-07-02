@@ -25,4 +25,4 @@ const orderConfirmed = (orderInfo) => {
 };
 
 
-module.exports = orderConfirmed;
+module.exports = { orderConfirmed };
