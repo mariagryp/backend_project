@@ -108,6 +108,31 @@ userRouter.put("/update/:id", passport.authenticate("user-rule", { session: fals
             });
     });
 
+// delete user (admin only)
+userRouter.delete("/deleteuser/:id",
+    passport.authenticate("admin-rule", { session: false }),
+    (req, res) => {
+        User.findByIdAndDelete({ _id: req.params.id },
+            (err) => {
+                if (err) {
+                    res.status(500).json({
+                        msg: {
+                            msgBody: "An error occured while deleting a user",
+                            msgError: true
+                        }
+                    });
+                } else {
+                    res.status(200).json({
+                        msg: {
+                            msgBody: "Successfully deleted user",
+                            msgError: false
+                        }
+                    });
+                }
+            });
+    }
+);
+
 
 // get order history
 userRouter.get("/getorderhistory",
